@@ -1,0 +1,32 @@
+<html>
+<body>
+<div class="body-content">
+  <ul *ngFor="let prod of products" style="list-style:none;">
+    <li>
+      <div class="card" style="width: 90%;">
+        <div class="row no-gutters">
+            <div class="col-sm-2">
+                <img [src]="prod.image" alt="product preview" style="height: 100%; width: 100%;">
+            </div>
+            <div class="col">
+                <div class="card-block" style="margin: 3%;">
+                    <h4 class="card-title" style="border-left: 3px solid rosybrown; padding-left: 5px;">{{prod.name}}</h4>
+                    <p class="card-text">{{prod.desc}}</p>
+                    <a href="#" target="_blank">Enquire</a>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="prod.price else default" class="card-footer w-100 text-muted" style="background-color: #706f6f1f;">
+            <small>Rs.{{prod.price}}</small>
+        </div>
+      </div>
+      <ng-template #default>
+        <div class="card-footer w-100 text-muted" style="background-color: #706f6f1f;">
+          <small>Currently Unavailable</small>
+      </div>
+    </ng-template>
+    </li>
+  </ul>
+</div> 
+</body>
+</html>

@@ -1,0 +1,10 @@
+body{
+    background: url('../../assets/images/cool-background2.png') 50% 0px no-repeat;
+    background-size: cover;
+    padding:2%;
+}
+@media only screen and (max-width: 320px) {
+    .body-content{
+        width:400px;
+    }
+} 
